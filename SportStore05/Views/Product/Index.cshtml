@@ -1,0 +1,46 @@
+﻿@model SportStore05.Models.Product
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BasicLayout.cshtml";
+}
+
+Product Name:@Model.Name
+
+<h2>NameAndPrice</h2>
+The product name is @Model.Name and it costs $@Model.Price
+
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Pirce</td>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <td>Stock Level</td>
+            <td>@ViewBag.ProductCount</td>
+        </tr>
+    </tbody>
+</table>
+
+@switch ((int)ViewBag.ProductCount)
+{
+    case 0:
+        @:out of stock
+        break;
+    case 1:
+        <b>Low Stock(@ViewBag.ProductCount)</b>
+        break;
+    default:
+        @ViewBag.ProductCount
+            break;
+}
