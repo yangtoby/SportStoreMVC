@@ -16,5 +16,7 @@ namespace SportStoreMVC.Domain.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string Category { get; set; }
+        public byte[] ImageData { get; set; }
+        public string ImageMineType { get; set; }
     }
 }

@@ -33,6 +33,8 @@ namespace SportStoreMVC.Domain.Concrete
                     dbEntry.Description = product.Description;
                     dbEntry.Price = product.Price;
                     dbEntry.Category = product.Category;
+                    dbEntry.ImageData = product.ImageData;
+                    dbEntry.ImageMineType = product.ImageMineType;
                 }
             }
             context.SaveChanges();
